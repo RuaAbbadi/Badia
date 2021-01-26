@@ -3,7 +3,7 @@ import { StyleSheet, Text, View,TextInput,TouchableOpacity, Touchable } from "re
 import {FontAwesome} from '@expo/vector-icons';
 import {FontAwesome5} from '@expo/vector-icons';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
-
+import { Feather } from '@expo/vector-icons';
 
 
 
@@ -21,6 +21,8 @@ export default class RegisterScreen extends Component {
    
 
     <View style={styles.container}>
+    <Feather name="arrow-left" size={24} color="#94c529" style={{marginBottom:40,marginRight:320}}  onPress={()=>pressBack()} />
+
      <Text style={styles.Text1}> Create New Account </Text>
       <Text style={styles.Text2}> Welcome to our application !</Text>
 
@@ -28,17 +30,18 @@ export default class RegisterScreen extends Component {
        
 
       <View style={styles.SectionStyle}>
-      <TextInput
+    <FontAwesome5  name ="user-alt" size={25} color={'#696969'}/>
+    <TextInput
                 style={styles.inputStyle}
                 underlineColorAndroid="#FFFFFF"
                 placeholder="User name" 
                 placeholderTextColor="#696969"
               />
-    <FontAwesome5  name ="user-alt" size={25} color={'#696969'}/>
 
       </View>
          <View style={styles.SectionStyle}>
-            <TextInput
+    <MaterialCommunityIcons  name ="email-open" size={29} color={'#696969'}/>
+    <TextInput
               style={styles.inputStyle}
               underlineColorAndroid="#FFFFFF"
               placeholder="Email"
@@ -46,22 +49,21 @@ export default class RegisterScreen extends Component {
               keyboardType="email-address"
 
             />
-    <MaterialCommunityIcons  name ="email-open" size={29} color={'#696969'}/>
 
       </View>
       <View style={styles.SectionStyle}>
-            <TextInput
+    <MaterialCommunityIcons  name ="lock" size={29} color={'#696969'}/>
+    <TextInput
               style={styles.inputStyle}
               underlineColorAndroid="#FFFFFF"
               placeholder="Password"
               placeholderTextColor="#696969"
               secureTextEntry={true}
             />
-    <MaterialCommunityIcons  name ="lock" size={29} color={'#696969'}/>
 
       </View>
 
-         <View style={{alignItems:'center'}} >
+         <View style={{alignItems:'center' ,marginTop:20}} >
           <TouchableOpacity style={styles.Button2}
            onPress={()=>pressHandlerppScreen()}
           >
@@ -150,14 +152,15 @@ const styles = StyleSheet.create ({
              justifyContent :'center',
  },
 Text1 :{ 
-           marginLeft :100,
+           marginRight :100,
            fontSize:25, 
            fontWeight:'bold',
+
         
       }, 
 Text2 :{ 
        
-        marginLeft :109,
+        marginRight :109,
         fontSize :17,
         color:'#9acd32',
         fontWeight:'bold',
@@ -190,7 +193,6 @@ Text2 :{
 
   Button2:{
     margin:15,
-    marginTop:10,
     borderRadius:25,
     backgroundColor:'#94c529',
     alignItems:'center',

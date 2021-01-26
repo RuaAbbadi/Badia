@@ -1,24 +1,27 @@
 import React,{Component} from 'react'; 
 import { StyleSheet, Text, View , TouchableOpacity} from "react-native"; 
+import { Feather } from '@expo/vector-icons';
 
 
 
 export default class  BookScreen extends Component {
     render(){
         const  pressBack=()=>{
-          this.props.navigation.navigate('WorkingSpace');
+          this.props.navigation.navigate('Space');
          }
 
 return (
 
 <View style={styles.container}>
+<Feather name="arrow-left" size={24} color="#94c529" style={{marginTop:50,marginRight:320,marginBottom :50}}  onPress={()=>pressBack()} />
+
 <Text style={styles.Text1}> Book Now  </Text>
  <Text style={styles.Text2}>Co-working space 1</Text>
  <Text style={styles.Text3}>Total : 60$</Text>
 
 
 
-<View style={{marginTop :100}}>
+<View style={{marginTop :90,flex:1}}>
 <TouchableOpacity
       style={{
       borderWidth:1,
@@ -29,7 +32,7 @@ return (
       height:30,
       backgroundColor:'#fff',
       borderRadius:50,
-      marginLeft :260
+      marginRight:260,
 
     }}
 >
@@ -45,7 +48,7 @@ return (
       height:30,
       backgroundColor:'#fff',
       borderRadius:50,
-      marginLeft :260,
+      marginRight:260,
       marginTop :10
 
     }}
@@ -62,7 +65,7 @@ return (
       height:30,
       backgroundColor:'#fff',
       borderRadius:50,
-      marginLeft :260,
+      marginRight:260,
       marginTop :10
 
     }}
@@ -82,7 +85,7 @@ return (
 const styles = StyleSheet.create({
   
 container: {
-    flex:1,
+       flex:1,
        backgroundColor: '#fff',
         alignItems: 'center',
          justifyContent :'center',
@@ -91,21 +94,21 @@ container: {
     
 
 Text1 :{ 
-    marginLeft :200,
+    marginRight :200,
     fontSize:25, 
  
 }, 
 
 
 Text2 :{      
-    marginLeft :90,
+    marginRight :90,
     marginTop:10,
     fontSize :25,
     color:'#9acd32',
 
 }, 
 Text3 :{      
-    marginLeft :200,
+    marginRight :200,
     marginTop:10,
     fontSize :25,
     color:'#9acd32',

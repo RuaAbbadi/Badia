@@ -6,12 +6,21 @@ import { Feather } from '@expo/vector-icons';
 import RBSheet from "react-native-raw-bottom-sheet";
 const {width}=Dimensions.get('window');
 const height= width; 
-const customImg = [
-  "https://firebasestorage.googleapis.com/v0/b/lotapp-9e84d.appspot.com/o/aster.jpg?alt=media&token=166e66b0-9c8e-4803-918e-25762c58dbda",
-  "https://firebasestorage.googleapis.com/v0/b/lotapp-9e84d.appspot.com/o/fan.jpg?alt=media&token=b419d507-9de8-4c4c-97e3-6b4eb2202e68",
-  "https://firebasestorage.googleapis.com/v0/b/lotapp-9e84d.appspot.com/o/stone.jpg?alt=media&token=e9d41537-7f26-4bfd-86eb-c2ef6fc58a9c"
-];
-const m=[1,2,3,4,5];
+const images =[
+
+  'https://images.pexels.com/photos/1104365/pexels-photo-1104365.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940' ,
+  'https://images.pexels.com/photos/1038002/pexels-photo-1038002.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+  'https://images.pexels.com/photos/70741/cereals-field-ripe-poppy-70741.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260'
+
+]
+const m=[
+  {name:'1',key:'1'},
+  {name:'2',key:'2'},
+  {name:'3',key:'3'},
+  {name:'3',key:'4'},
+  {name:'3',key:'5'},
+  
+  ];
 
   export default class WorkingSpace extends Component {
     constructor(props){
@@ -45,21 +54,19 @@ const m=[1,2,3,4,5];
     <View style={{flexDirection:'row'}}>
       <View>
       <View >
-      <View style={{margin:20,width:30,height:30,borderRadius:30,backgroundColor:'white',alignItems:'center',position:'absolute',zIndex:3, }} 
+      <View style={{margin:40,width:30,height:30,borderRadius:30,backgroundColor:'white',alignItems:'center',position:'absolute',zIndex:3, }} 
        >
-      <Feather name="arrow-left" size={20} color='#94c529'   style={{paddingTop:3,paddingRight:1}}  onPress={()=>pressBack()}  />
+      <Feather name="arrow-left" size={20} color='#94c529'   style={{paddingTop:5,paddingRight:1}}  onPress={()=>pressBack()}  />
       </View>
       </View>
-  {/*Back Icon */}
  
-        {/* Image Slider*/}
         <ScrollView
          pagingEnabled
           horizontal 
          onScroll={this.change}
           showsHorizontalScrollIndicator={false}>
        {
-         customImg.map((image,index)=>
+         images.map((image,index)=>
          <Image
          key={index}
          source={{uri:image}}
@@ -71,7 +78,7 @@ const m=[1,2,3,4,5];
        </ScrollView>
        <View style={styles.dot}>
          {
-           customImg.map((i,k)=>
+           images.map((i,k)=>
            <Text  key={k} style={k==this.state.active?styles.dotActivetext:styles.dottext}>⬤</Text>
            )
          }
@@ -79,9 +86,7 @@ const m=[1,2,3,4,5];
        </View>
 
       </View>
-       {/*Info view */}
       <View style={styles.infoview}>
- {/* Love Icon */}
       <View style={{ flexDirection:'row-reverse',marginTop:-35,marginLeft:35}}  >
             <TouchableOpacity style={styles.loveicon}>
             <Ionicons name="heart" size={28} color="white" style={{padding:20}} />
@@ -91,16 +96,15 @@ const m=[1,2,3,4,5];
 
 <Text style={{fontSize:23,color:'#94c529'}}> Co-working space 1</Text>
 
-<Text style={{fontSize:13,color:'#94c529'}}>This Is asdjkas;dlfjsd;lfjkf;lkasjfl;ksjf sdfkljasdflkjs
-adflksajdflksajdfasdf sdlfkjasdlfkjskldfjsdlkfjaslfdk</Text>
+<Text style={{fontSize:13,color:'#94c529', marginLeft:10}}>This Is Co-working space 1 </Text>
 
 <View style={{flexDirection:'column',marginTop:20}}>
 
 <View style={{flexDirection:'row'}}>
-<Text style={{color:'#94c529',fontSize:14,fontWeight:'10'}} >Available</Text>
+<Text style={{color:'#94c529',fontSize:14}} >Available</Text>
 
 <TouchableOpacity style={styles.Avaiable} onPress={() => this.RBSheet.open()}>
-  <Text style={{fontSize:14, fontWeight:'10',padding:5}} >10:00-14:00</Text>
+  <Text style={{fontSize:14,padding:5}} >10:00-14:00</Text>
 </TouchableOpacity>
 
 
@@ -122,12 +126,12 @@ adflksajdflksajdfasdf sdlfkjasdlfkjskldfjsdlkfjaslfdk</Text>
           {/*RBSheet Component */}
         <View style={{margin:30}}>
 <Text style={{margin:5,fontSize:26}}>Time</Text>
-{/** Pick Time */}
+{/* Pick Time */}
 <View  style={{margin:5}}>
 <FlatList
  data={m}  
- showsHorizontalScrollIndicator={false}
  numColumns={3}
+ showsHorizontalScrollIndicator={false}
   renderItem={({item})=>(
 <TouchableOpacity style={{backgroundColor:'#94c529',borderRadius:17,width:80,alignItems:'center',margin:5}}>
   <Text style={{fontSize:12,color:'white',padding:8}}>11:00 AM</Text>

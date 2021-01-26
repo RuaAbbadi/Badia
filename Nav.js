@@ -29,22 +29,20 @@ const AuthStack =createStackNavigator();
 const MyStack = () =>{
   return (
     <NavigationContainer>
-      <AuthStack.Navigator> 
+      <AuthStack.Navigator  screenOptions={{
+       headerShown: false,
+       swipeEnabled: false,
+      }}> 
 
-<AuthStack.Screen  name ="Home" component={Home}  options={{ headerShown:false ,}}/>
+<AuthStack.Screen  name ="Home" component={Home}  options={{}}/>
 <AuthStack.Screen  name ="LoginScreen" component={LoginScreen} options={{ title:"" ,}} />
 <AuthStack.Screen name ="RegisterScreen" component={RegisterScreen} options={{ title:"" ,}} />
 <AuthStack.Screen name ="TabScreen" component={TabScreen} options={{ title:"" ,}} />
 <AuthStack.Screen  name ="Suggestion" component={Suggestion} options={{ title:"" ,}} />
-<AuthStack.Screen  name ="Space" component={Space} options={{ title:"" , headerShown:false}} />
+<AuthStack.Screen  name ="Space" component={Space} options={{ title:"" }} />
 <AuthStack.Screen  name ="BookScreen" component={BookScreen} options={{ title:"" ,}} />
 <AuthStack.Screen  name ="Calendar" component={Calendar} options={{ title:"" }} />
 <AuthStack.Screen  name ="ProfileScreen" component={ProfileScreen} options={{ title:"" }} />
-
-
-
-
-
 
 
 </AuthStack.Navigator>

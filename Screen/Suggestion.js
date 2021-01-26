@@ -5,7 +5,11 @@ import { Ionicons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons'; 
 import { Fontisto } from '@expo/vector-icons'; 
 export default function Suggestion ({navigation}) {  
-  const m = [ 1,2,3,4 ];
+  const m = [ 
+    {name:'1',key :'1'},
+    {name:'2',key :'2'},
+    {name:'3',key :'3'},
+    ];
   const m1 = [ 'All','Categories 1','Categories 2' ];
   const {width}=Dimensions.get('window');
 

@@ -42,7 +42,7 @@ const images =[
       <View style={styles.container}>
       <View style={styles.image} >
       <Image 
-      style={{width:80 ,height:80}}
+      style={{width:100 ,height:100}}
       source={require("../image/Logo.jpg")} ></Image>
       </View>
 
@@ -106,8 +106,8 @@ const images =[
 
     },
     imageTextView: {
-marginTop:20,
-fontSize:18,
+     marginTop:20,
+     fontSize:18,
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -122,7 +122,7 @@ fontSize:18,
                 marginBottom:30,
                 },
     image:{
-      padding:20,
+      padding:50,
       alignItems: 'center',
       justifyContent: 'center',
     
@@ -141,6 +141,7 @@ fontSize:18,
      marginRight:70,
      marginTop:20,
      width:186,
+     height:50
     },
     text1:{
       color:'white',
@@ -165,6 +166,8 @@ fontSize:18,
      marginRight:70,
      borderColor:'#94c529',
      width:186,
+     height:50
+
     },
     dot:{
       flexDirection:'row',
