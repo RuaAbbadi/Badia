@@ -1,6 +1,8 @@
 import React,{Component} from 'react'; 
 import { StyleSheet, Text, View,TextInput,TouchableOpacity } from "react-native"; 
 import { Divider } from 'react-native-elements';
+import { Feather } from '@expo/vector-icons'; 
+
 
 
 export default class ProfileScreen extends Component {
@@ -11,6 +13,7 @@ export default class ProfileScreen extends Component {
      
 return (
 <View style={styles.container}> 
+<Feather name="arrow-left" size={24} color="#94c529" style={{marginTop:50,marginRight:300}}  onPress={()=>pressBack()} />
 <Text  style={styles.Text1}> Profile </Text>
 <View style ={{flex:1,flexDirection:'row',justifyContent:'center',marginTop :50,}}>
       <TouchableOpacity

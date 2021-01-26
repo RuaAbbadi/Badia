@@ -7,9 +7,10 @@ import RNMonthly from "react-native-monthly";
 
 export default class Calender  extends Component { 
   render(){
-    const pressBack=()=>{
+    const  pressBack=()=>{
       this.props.navigation.navigate('Space');
      }
+     
      
   return (
    
@@ -155,15 +156,7 @@ export default class Calender  extends Component {
 
 
         </View>
-
-
-       
-
-
         </ScrollView>
-        
-
-  
     </View>
   ); 
 

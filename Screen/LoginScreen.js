@@ -2,6 +2,7 @@ import React ,{Component}from 'react';
 import { StyleSheet, Text, View,TextInput,TouchableOpacity } from "react-native"; 
 import {FontAwesome} from '@expo/vector-icons';
 import {FontAwesome5} from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons'; 
 import {MaterialCommunityIcons} from '@expo/vector-icons';
 
 
@@ -18,6 +19,8 @@ export default class LoginScreen extends Component {
 return (
 
     <View style={styles.container}>
+    <Feather name="arrow-left" size={24} color="#94c529" style={{marginRight:300}}  onPress={()=>pressBack()} />
+
     <Text style={styles.Text1}> Login page </Text>
      <Text style={styles.Text2}> Create new account </Text>
 
@@ -146,6 +149,7 @@ const styles = StyleSheet.create ({
                 
     },
    Text1 :{ 
+             marginTop:20,
               marginRight :200,
               fontSize:25, 
               fontWeight:'bold',
