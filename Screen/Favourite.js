@@ -1,26 +1,35 @@
-import React from 'react'; 
+import React ,{Component}from 'react'; 
 import { StyleSheet, Text, View , TouchableOpacity} from "react-native"; 
 import {Ionicons} from '@expo/vector-icons';
 
 
-const Favourite =()=>{
+
+export default class  Favourite extends Component{
+  render(){
+    const  pressBack=()=>{
+      this.props.navigation.navigate('ProfileScreen');
+     }
 
     return (
 
-    <View style={styles.container}>
+    <View style={styles.container}>       
+
+
     <TouchableOpacity
       style={{
       borderWidth:4,
       borderColor:'#9acd32',
       alignItems:'center',
       justifyContent:'center',
-      width:65,
-      height:65,
+      width:50,
+      height:50,
       backgroundColor:'#fff',
       borderRadius:50,
-      marginRight :250
+      marginLeft:250
 
     }}
+    onPress={()=>pressBack()}
+
 >
 
      </TouchableOpacity> 
@@ -98,7 +107,7 @@ const Favourite =()=>{
     );
 }
 
-export default Favourite;
+}
 const styles = StyleSheet.create(
   
     { container: {
@@ -110,7 +119,7 @@ const styles = StyleSheet.create(
         
    },
    Text1 :{ 
-    marginLeft :150,
+    marginRight :180,
     fontSize:28, 
  
 }, 

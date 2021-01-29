@@ -1,7 +1,8 @@
 import React,{Component} from 'react'; 
-import { StyleSheet, Text, View,TextInput,TouchableOpacity } from "react-native"; 
+import { StyleSheet, Text, View,TextInput,TouchableOpacity, } from "react-native"; 
 import { Divider } from 'react-native-elements';
 import { Feather } from '@expo/vector-icons'; 
+import { ScrollView } from 'react-native-gesture-handler';
 
 
 
@@ -12,8 +13,9 @@ export default class ProfileScreen extends Component {
      }
      
 return (
+ 
 <View style={styles.container}> 
-<Feather name="arrow-left" size={24} color="#94c529" style={{marginTop:50,marginRight:300}}  onPress={()=>pressBack()} />
+<Feather name="arrow-left" size={24} color="#94c529" style={{marginTop:80,marginRight:300}}  onPress={()=>pressBack()} />
 <Text  style={styles.Text1}> Profile </Text>
 <View style ={{flex:1,flexDirection:'row',justifyContent:'center',marginTop :50,}}>
       <TouchableOpacity
@@ -45,7 +47,7 @@ return (
 </View>
 
 <View>
-<Text  style={{fontSize:18,marginLeft:260,marginTop:50 }}>Phone</Text>
+<Text  style={{fontSize:18,marginRight:260,marginTop:50 }}>Phone</Text>
 </View>
 
 <View>
@@ -78,8 +80,8 @@ container: {
                 justifyContent :'center',
     },
 Text1 :{ 
-              marginTop :100, 
-              marginLeft :250,
+              marginTop :50, 
+              marginRight :250,
               fontSize:25, 
              
            
